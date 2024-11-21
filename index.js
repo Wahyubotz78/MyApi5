@@ -31,7 +31,7 @@ app.use(compression());
 
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, 
-  max: 2000, 
+  max: 5000, 
   message: 'Oops too many requests'
 });
 app.use(limiter);
