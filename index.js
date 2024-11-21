@@ -163,7 +163,6 @@ app.get('/other', isAuthenticated, async(req, res) => {
 
 app.use('/api', apirouter)
 app.use('/users', userrouter)
-app.use('/premium', premRouters)
 
 app.use(function (req, res, next) {
     res.status(404).json({
