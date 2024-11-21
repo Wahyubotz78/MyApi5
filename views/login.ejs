@@ -1,303 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="https://i.ibb.co/7yJKphg/20210909-090604.jpg">
-  <title>Zyxmaple Api</title>
-  <!--     Fonts and icons     -->
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <!-- Nucleo Icons -->
-  <link href="css/nucleo-icons.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link href="css/black-dashboard.css" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="demo/demo.css" rel="stylesheet" />
-  <link href="css/simple.css" rel="stylesheet" />
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="https://t4.ftcdn.net/jpg/03/22/95/69/360_F_322956978_9ESBVewTYdhSu9G6qf2JazX9tUsdh53g.jpg"/>
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
+<body>
+	<div>
+      <center>
+            <%- include('layouts/alert')  %> 
+            <%- include('layouts/error')  %> 
+        </center>
+</div>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="https://t4.ftcdn.net/jpg/03/22/95/69/360_F_322956978_9ESBVewTYdhSu9G6qf2JazX9tUsdh53g.jpg" alt="IMG">
+				</div>
 
-<body class="sidebar-mini white-content">
-<div>
-	<center>
-            <%- include('layouts/msg')  %> 
-            <%- include('layouts/errors')  %> 
+				<form class="login100-form validate-form" action="/users/login" method="POST">
+					<span class="login100-form-title">
+						Auth Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					<div class="text-center p-t-40">
+						<a class="txt2" href="/users/signup">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
-     <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle d-inline">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="#">Zyxmaple-Api</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a href="/users/signup" class="nav-link">
-                            <i class="tim-icons icon-laptop"></i> Signup
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="/users/login" class="nav-link">
-                            <i class="tim-icons icon-single-02"></i> Login
-                        </a>
-                    </li>
-                    <li class="nav-item  active ">
-                        <a href="/price" class="nav-link">
-                            <i class="tim-icons icon-coins"></i> Pricing
-                        </a>
-                    </li>
-                    </ul>
-            </div>
-        </div>
-    </nav>
-    
-    	<section class="py-5"></section>
-    <div class="content">
-    	<div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title text-center text-success" style="font-size: 20px;">LOGIN FORM</p>
-                        <p class="text-muted small-xl text-center">Zyxmaple Rest Api'S</p>
-                        <form method="POST" action="/users/login">
-                        <!-- <form id="forms"> -->
-                            <div class="form-group">
-                                <input style="font-family:Arial, FontAwesome" name="username" id="username" type="text" class="form-control" id="nameInput" placeholder="&#xf007;   Username" required>
-                            </div>
-                            <div class="form-group">
-                                <input style="font-family:Arial, FontAwesome" name="password" id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="&#xf13e;   Password" required>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-success mb-2"><i class="fas fa-sign-in-alt"></i><em class="ml-2"></em>Login</button>
-                            </div>
-                        </form>
-                        <div class="text-center">
-                            <p></p>
-                            <p>Any Help ?</p>
-                            <a class="btn btn-success mb-2" href="/users/register"><i class="fas fa-clipboard-list"></i><em class="ml-2"></em>Register</a>    
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </center> 
-    </div>
-    
-<footer class="footer">
-        <div class="container-fluid">
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="https://instagram.com/Zyxmaple" class="nav-link">
-                Instagram
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://wa.me/62895378264836" class="nav-link">
-                Whatsapp
-              </a>
-            </li>
-          </ul>
-          <div class="copyright">
-            ©
-            <script>
-              document.write(new Date().getFullYear())
-            </script> Made With <i class="tim-icons icon-heart-2"></i> By
-            <a href="javascript:void(0)" target="_blank">Zyxmaple</a> & Raku
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="js/core/jquery.min.js"></script>
-  <script src="js/core/popper.min.js"></script>
-  <script src="js/core/bootstrap.min.js"></script>
-  <script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <script src="js/tol.js"></script>
-  <!--  Google Maps Plugin    -->
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
-  </script>
-    <script> 
-  	$.getJSON("https://api.countapi.xyz/hit/janbot-api.herokuapp.com/visits",
-	function(data) {
-	$("#visitor").html(data.value);
-	})
+	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../vendor/bootstrap/js/popper.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../vendor/select2/select2.min.js"></script>
+	<script src="../vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
 	</script>
-	<script>
-		$.getJSON("https://api.ipify.org?format=json",
-		function(data) {
-			$("#ipaddres").html(data.ip)
-			})
-			</script>
-			<script>
-				// Akhir Hitungan Mundur
-				var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
-				// Update Hitungan Mundur Setiap 1 Detik
-				var x = setInterval(function() {
-					// Mengambil Tanggal Dan Waktu
-					var now = new Date().getTime();
-					// Find the distance between now and the count down date
-					var distance = countDownDate - now;
-					// Kalkulator Waktu Hari, Jam, Menit, Detik 
-					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-					// Menampilkan Hasil Di Dalam element Menggunakan id="time"
-					document.getElementById("time").innerHTML = days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik ";
-					// Ketika countdown timer sudah berakhir Maka Tulisan Berakhir
-					if (distance < 0) {
-						clearInterval(x);
-						document.getElementById("time").innerHTML = "Berakhir";
-					}
-				}, 1000);
-			</script>
-</body>
+	<script src="../js/main.js"></script>
 
+</body>
 </html>
