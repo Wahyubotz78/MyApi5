@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-global.creator = 'NdyZz'// yourname
+global.creator = 'DluxTzy'// yourname
 global.MONGO_DB_URI = ''
 global.ACTIVATION_TOKEN_SECRET = "-@Pqnap+@(/1jAPPnew/@10" //isi apa aja bebas
 global.your_email = "sandikurniawan12042004@gmail.com"
