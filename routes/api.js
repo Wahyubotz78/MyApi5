@@ -31,6 +31,20 @@ const {
 } = require(__path + '/lib/functions.js');
 const oxy = require(__path + '/lib/oxy.js');
 
+router.post("/addapikey", async (req, res, next) => {
+  const key = req.query.key;
+  if(listkey.includes(key)) {
+    res.json({
+      message: 'apikey sudah terdaftar'
+    });
+  } else {
+    listkey.push(key);
+    res.json({
+      message: `berhasil mendaftarkan ${key} Kedatabase apikey`
+    });
+  }
+});
+
 router.get('/cekapikey', async (req, res, next) => {
     var apikey = req.query.apikey
     if (!apikey) return res.json(loghandler.noapikey)
