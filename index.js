@@ -91,6 +91,15 @@ app.get('/docs', isAuthenticated, async(req, res) => {
   });
 })
 
+app.get('/changelog', isAuthenticated, async (req, res) => { 
+  let { apikey, username } = req.user
+  res.render('changelog', {
+    username: username,
+    apikey: apikey,
+    layout: 'layouts/main'
+  });
+})
+
 app.get('/cecan', isAuthenticated, async(req, res) => {
   let getkey = await getApikey(req.user.id)
   let { apikey, username } = getkey
